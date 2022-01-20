@@ -1,4 +1,5 @@
 @use "../../../../theme.scss" as *;
+@use "../../../../mixin.scss" as *;
 .sidebar {
     height: 12vh;
     width: 100vw;
@@ -55,7 +56,7 @@
     position: fixed;
     height: 1px;
     width: 1px;
-    left: 0;
+    top: 0;
     background-color: $firstColor;
     z-index: 0;
     transition: all 1s cubic-bezier(0.94, 0.11, 0.64, 0.93);
@@ -101,22 +102,66 @@
 .navImg {
     position: fixed;
     z-index: 11;
-    height: 200px;
-    width: 200px;
+    background-repeat: no-repeat;
+    height: 300px !important;
+    width: 300px !important;
+    transition: all 1s;
+    pointer-events: none;
+    background-color: $firstColor;
+    top: 0;
+    background-size: contain;
 }
 
 .about {
-    background-image: url('./img/about.jpg');
+    background-image: url("./img/about.jpg");
 }
 
 .works {
-    background-image: url('./img/works.jpg');
-    height: 200px;
-    width: 200px;
+    background-image: url("./img/works.jpg");
 }
 
 .contact {
-    background-image: url('./img/contact.jpg');
-    height: 200px;
-    width: 200px;
+    background-image: url("./img/contact.jpg");
+}
+
+@include mobile() {
+    .sidebar {
+        &__title {
+            width: 80vw;
+            margin: 0 0 0 0;
+            font-size: 1.8em;
+        }
+        &__btn {
+            margin: 1em 1em 0 0;
+            &>p {
+                width: 3em;
+                height: 1px;
+                background-color: $firstColor;
+            }
+        }
+    }
+    .nav {
+        height: 70vh;
+        width: 65vw;
+        margin: 0 auto;
+        font-size: 4rem;
+        text-transform: uppercase;
+        p {
+            margin: 0px;
+            padding: 30px;
+        }
+    }
+    .btn__enable {
+        &>p {
+            background-color: $backgroundColor;
+        }
+    }
+    .btn__disable {
+        &>p {
+            background-color: $firstColor;
+        }
+    }
+    .navImg {
+        display: none;
+    }
 }
