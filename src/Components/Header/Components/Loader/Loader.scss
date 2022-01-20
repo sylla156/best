@@ -1,0 +1,19 @@
+@use '../../../../theme.scss' as *;
+.loader {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    &>div {
+        position: absolute;
+        background-color: $firstColor;
+        width: 100vw;
+        height: 33.33%;
+    }
+    &--child2 {
+        bottom: 33.33%;
+    }
+    &--child3 {
+        bottom: 0;
+    }
+}
