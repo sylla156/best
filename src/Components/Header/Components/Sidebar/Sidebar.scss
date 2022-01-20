@@ -86,14 +86,37 @@
     height: 70vh;
     width: 65vw;
     margin: 0 auto;
-    font-size: 8rem;
+    font-size: 7rem;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     p {
-        margin: 30px;
-        padding: 0;
+        margin: 0px;
+        padding: 30px;
     }
+}
+
+.navImg {
+    position: fixed;
+    z-index: 11;
+    height: 200px;
+    width: 200px;
+}
+
+.about {
+    background-image: url('./img/about.jpg');
+}
+
+.works {
+    background-image: url('./img/works.jpg');
+    height: 200px;
+    width: 200px;
+}
+
+.contact {
+    background-image: url('./img/contact.jpg');
+    height: 200px;
+    width: 200px;
 }
