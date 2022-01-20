@@ -62,8 +62,8 @@ function MouseEffect(event) {
   mouse.y = event.pageY;
   let img = document.querySelector(".navImg");
   
-      img.style.top =  mouse.y + 100+ "px";
-      img.style.left = mouse.x - 400+ "px";
+      img.style.top =  mouse.y+ "px";
+      img.style.left = mouse.x+ "px";
 
 
   switch (event.target.innerText) {
