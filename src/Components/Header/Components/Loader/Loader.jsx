@@ -5,6 +5,7 @@ export default function Loader() {
     const ga1 = useRef();
     const ga2 = useRef();
     const ga3 = useRef();
+    const parent = useRef();
   
     useEffect(() => {
   
@@ -26,9 +27,17 @@ export default function Loader() {
         delay:1.6
   
       });
+
+      gsap.to(parent.current, {
+        duration: 2,
+        delay:3.5,
+        zIndex:-10
+      });
+
+
     });
   return (
-    <div className="loader">
+    <div className="loader" ref={parent}>
       <div className="loader--child1" ref={ga1}></div>
       <div className="loader--child2" ref={ga2}></div>
       <div className="loader--child3" ref={ga3}></div>

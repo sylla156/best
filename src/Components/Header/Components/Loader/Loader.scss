@@ -1,9 +1,10 @@
 @use '../../../../theme.scss' as *;
 .loader {
-    position: relative;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     z-index: 10;
+    pointer-events: none;
     &>div {
         position: absolute;
         background-color: $firstColor;

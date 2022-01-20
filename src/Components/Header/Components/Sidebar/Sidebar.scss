@@ -1,0 +1,82 @@
+@use "../../../../theme.scss" as *;
+.sidebar {
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+    &__title {
+        width: 30vw;
+        margin: 0 0 0 3em;
+    }
+    &__btn {
+        margin: 1em 3em 0 0;
+        &>p {
+            width: 3em;
+            height: 1px;
+            background-color: $firstColor;
+        }
+    }
+}
+
+.btn__enable {
+    &>p {
+        background-color: $backgroundColor;
+        transition: transform 0.5s;
+    }
+    &> :nth-child(1) {
+        transform: rotate(122deg) translateX(1.1em);
+        width: 2.9em;
+    }
+    &> :nth-child(2) {
+        transform: rotate(-122deg) translate(-6px, 12px);
+        width: 2.9em;
+    }
+}
+
+.btn__disable {
+    &>p {
+        background-color: $firstColor;
+        transition: transform 0.5s;
+    }
+    &> :nth-child(1) {
+        transform: rotate(0deg) translateX(0);
+        width: 2.9em;
+    }
+    &> :nth-child(2) {
+        transform: rotate(0deg) translate(0);
+        width: 2.9em;
+    }
+}
+
+.nav__disable {
+    position: fixed;
+    height: 1px;
+    width: 1px;
+    left: 0;
+    background-color: $firstColor;
+    z-index: 0;
+    transition: all 1s cubic-bezier(0.94, 0.11, 0.64, 0.93);
+    &>* {
+        opacity: 0;
+    }
+}
+
+.nav__enable {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $firstColor;
+    z-index: 8;
+    transition: all 1s cubic-bezier(0.24, 0.21, 0.41, 1.89);
+    border-radius: 0 0 3000px 0;
+    &>* {
+        opacity: 1;
+    }
+}
