@@ -80,3 +80,20 @@
         opacity: 1;
     }
 }
+
+.nav {
+    color: $backgroundColor;
+    height: 70vh;
+    width: 65vw;
+    margin: 0 auto;
+    font-size: 8rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 30px;
+        padding: 0;
+    }
+}

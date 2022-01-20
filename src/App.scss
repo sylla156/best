@@ -1,8 +1,10 @@
 @use './theme.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Neonderthaw', cursive;
 }
 
 #app {

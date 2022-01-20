@@ -35,7 +35,11 @@ function NavBar({ nameClassChoose }) {
   let nameClass = nameClassChoose ? "nav__enable" : "nav__disable";
   return (
     <div className={nameClass}>
-     
+     <div className="nav">
+         <p>about</p>
+         <p>works</p>
+         <p>Contact</p>
+     </div>
     </div>
   );
 }
