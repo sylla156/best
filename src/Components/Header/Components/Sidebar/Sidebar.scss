@@ -94,6 +94,7 @@
     justify-content: center;
     align-items: center;
     p {
+        z-index: 10;
         margin: 0px;
         padding: 30px;
     }
@@ -101,7 +102,7 @@
 
 .navImg {
     position: fixed;
-    z-index: 11;
+    z-index: 9;
     background-repeat: no-repeat;
     height: 300px !important;
     width: 300px !important;
@@ -110,6 +111,8 @@
     background-color: $firstColor;
     top: 0;
     background-size: contain;
+    margin: 0;
+    padding: 0%;
 }
 
 .about {
@@ -162,6 +165,7 @@
         }
     }
     .navImg {
-        display: none;
+        height: 100px !important;
+        width: 100px !important;
     }
 }

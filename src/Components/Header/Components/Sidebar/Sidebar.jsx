@@ -62,9 +62,8 @@ function MouseEffect(event) {
   mouse.y = event.pageY;
   let img = document.querySelector(".navImg");
   
-      img.style.top =  mouse.y+ "px";
-      img.style.left = mouse.x+ "px";
-
+      img.style.transform =  `translate(${mouse.x - img.offsetWidth/2}px, ${mouse.y - img.offsetHeight/2}px)`;
+      console.log(img);
 
   switch (event.target.innerText) {
     case "ABOUT":

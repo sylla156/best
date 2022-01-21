@@ -11,7 +11,7 @@ const links = ['element','element','element','element']
 const title = 'sylla ibrahim';
   return (
     <header className="header">
-     <Loader/>
+     {/* <Loader/> */}
      <Sidebar title={title} />
     </header>
   );
