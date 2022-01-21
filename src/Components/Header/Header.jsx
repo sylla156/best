@@ -3,16 +3,16 @@ import "./Header.scss";
 import './Components/Loader/Loader';
 import Loader from "./Components/Loader/Loader";
 import Sidebar from './Components/Sidebar/Sidebar';
-
+import Content from '../../assets/js/Content'
 
 export default function Header() {
  
-const links = ['element','element','element','element']
-const title = 'sylla ibrahim';
+const navTitle = Content().header.navTitle;
+const title = Content().header.title;
   return (
     <header className="header">
-     {/* <Loader/> */}
-     <Sidebar title={title} />
+     <Loader/>
+     <Sidebar title={title} navTitle={navTitle} />
     </header>
   );
 }

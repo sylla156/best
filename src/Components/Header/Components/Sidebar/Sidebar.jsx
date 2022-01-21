@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import "./Sidebar.scss";
 
-export default function Sidebar({ title }) {
+export default function Sidebar({ title,navTitle }) {
   let [nameClassChoose, handleChangeNameClassChoose] = useState(false);
   function onHanbleNavbar() {
     handleChangeNameClassChoose(!nameClassChoose);
@@ -15,7 +14,7 @@ export default function Sidebar({ title }) {
         title={title}
         nameClassChoose={nameClassChoose}
       />
-      <NavBar nameClassChoose={nameClassChoose} />
+      <NavBar nameClassChoose={nameClassChoose} navTitle={navTitle} />
     </div>
   );
 }
@@ -38,14 +37,16 @@ function NavBtn({ title, onHanbleNavbar, nameClassChoose }) {
   );
 }
 
-function NavBar({ nameClassChoose }) {
+function NavBar({ nameClassChoose, navTitle }) {
   let nameClass = nameClassChoose ? "nav__enable" : "nav__disable";
   return (
     <div className={nameClass}>
       <div className="nav">
-        <p onMouseMove={MouseEffect}>about</p>
-        <p onMouseMove={MouseEffect}>works</p>
-        <p onMouseMove={MouseEffect}>Contact</p>
+       {
+         navTitle.map((title,key)=>(
+           <p  onMouseMove={MouseEffect}  key={key}>{title}</p>
+         ))
+       }
       </div>
       <div className="navImg"></div>
     </div>
@@ -60,10 +61,9 @@ function MouseEffect(event) {
  
   mouse.x = event.pageX;
   mouse.y = event.pageY;
-  let img = document.querySelector(".navImg");
+  const img = document.querySelector(".navImg");
   
       img.style.transform =  `translate(${mouse.x - img.offsetWidth/2}px, ${mouse.y - img.offsetHeight/2}px)`;
-      console.log(img);
 
   switch (event.target.innerText) {
     case "ABOUT":
@@ -83,6 +83,8 @@ function MouseEffect(event) {
       break;
 
     default:
+      img.classList.remove('works',"about",'contact');
+
       break;
   }
 }
