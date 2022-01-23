@@ -1,20 +1,22 @@
 .parallax {
     height: 88vh;
     width: 100vw;
-    position: relative;
+    position: absolute;
     top: 0;
-    z-index: 6;
+    z-index: 7;
     overflow: hidden;
     &>div {
         position: absolute;
         img {
             height: 50px;
             width: 50px;
+            transform-style: preserve-3d;
         }
     }
     &> :nth-child(1) {
         top: 20%;
         left: 60%;
+        filter: blur(2px);
     }
     &> :nth-child(2) {
         top: 90%;
@@ -27,5 +29,10 @@
     &> :nth-child(4) {
         top: 10%;
         left: 10%;
+        filter: blur(6px);
+        img {
+            height: 100px;
+            width: 100px;
+        }
     }
 }

@@ -1,7 +1,7 @@
 @use "../../../../assets/scss/theme.scss" as *;
 @use "../../../../assets/scss/mixin.scss" as *;
 .sidebar {
-    height: 12vh;
+    height: 8vh;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -11,6 +11,7 @@
     &__title {
         width: 30vw;
         margin: 0 0 0 3em;
+        font-size: small;
     }
     &__btn {
         margin: 1em 3em 0 0;
@@ -18,6 +19,19 @@
             width: 3em;
             height: 1px;
             background-color: $firstColor;
+        }
+        &:hover {
+            &>p {
+                transition: transform 0.5s;
+            }
+            &> :nth-child(1) {
+                transform: rotate(122deg) translateX(1.1em);
+                width: 2.9em;
+            }
+            &> :nth-child(2) {
+                transform: rotate(-122deg) translate(-6px, 12px);
+                width: 2.9em;
+            }
         }
     }
 }
@@ -53,12 +67,12 @@
 }
 
 .nav__disable {
-    position: fixed;
+    position: absolute;
     height: 1px;
     width: 1px;
     top: 0;
     background-color: $firstColor;
-    z-index: 0;
+    z-index: 7;
     transition: all 1s cubic-bezier(0.94, 0.11, 0.64, 0.93);
     &>* {
         opacity: 0;
@@ -66,7 +80,7 @@
 }
 
 .nav__enable {
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 100vw;
     left: 0;
