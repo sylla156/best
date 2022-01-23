@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: relative;
     z-index: 9;
     &__title {
         width: 30vw;
@@ -111,7 +111,7 @@
     background-repeat: no-repeat;
     height: 300px !important;
     width: 300px !important;
-    transition: transform background 0.5s ease-out;
+    transition: transform background-image opacity 0.5s ease-out;
     pointer-events: none;
     background-color: $firstColor;
     top: 0;

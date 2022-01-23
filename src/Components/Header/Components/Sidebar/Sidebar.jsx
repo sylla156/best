@@ -8,14 +8,14 @@ export default function Sidebar({ title,navTitle }) {
   }
 
   return (
-    <div>
+    <>
       <NavBtn
         onHanbleNavbar={onHanbleNavbar}
         title={title}
         nameClassChoose={nameClassChoose}
       />
       <NavBar nameClassChoose={nameClassChoose} navTitle={navTitle} />
-    </div>
+    </>
   );
 }
 
@@ -84,7 +84,6 @@ function MouseEffect(event) {
 
     default:
       img.classList.remove('works',"about",'contact');
-
       break;
   }
 }

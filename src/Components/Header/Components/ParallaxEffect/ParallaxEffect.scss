@@ -1,0 +1,31 @@
+.parallax {
+    height: 88vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    z-index: 6;
+    overflow: hidden;
+    &>div {
+        position: absolute;
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+    &> :nth-child(1) {
+        top: 20%;
+        left: 60%;
+    }
+    &> :nth-child(2) {
+        top: 90%;
+        left: 20%;
+    }
+    &> :nth-child(3) {
+        bottom: 0;
+        right: 5%;
+    }
+    &> :nth-child(4) {
+        top: 10%;
+        left: 10%;
+    }
+}
