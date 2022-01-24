@@ -1,5 +1,8 @@
-@import url(./Components/Loader/Loader.scss); // c'est le loader
+@use '../../assets/scss/theme.scss' as *;
+@import url(./Components/Loader/Loader.scss); // c'est le loader]
 .header {
     height: 100vh;
+    width: 100vw !important;
+    background-color: $backgroundColor;
     margin: 0;
 }

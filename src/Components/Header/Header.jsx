@@ -13,11 +13,10 @@ export default function Header() {
 const navTitle = websiteContent().header.navTitle;
 const title = websiteContent().header.title;
   return (
-    <header className="header">
-     <Loader/>
+    <header className="header" data-scroll-section>
      <Sidebar title={title} navTitle={navTitle} />
-     <ParallaxEffect/>
-     <Reseau/>
+     {/* <ParallaxEffect/> */}
+     {/* <Reseau/> */}
      <Content/>
     </header>
   );

@@ -9,15 +9,16 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: flex-start;
     gap: -230px;
     padding: 0;
     text-transform: uppercase;
+    font-family: 'EB Garamond', serif;
     &__title {
         padding: 0;
         &--title {
-            font-size: 10vw;
+            font-size: 13vw;
             color: $secondColor;
             margin: 0;
             padding: 0;
