@@ -2,6 +2,7 @@
 @import url(./Components/Loader/Loader.scss); // c'est le loader]
 .header {
     height: 100vh;
+    min-height: 100vh;
     width: 100vw !important;
     background-color: $backgroundColor;
     margin: 0;
