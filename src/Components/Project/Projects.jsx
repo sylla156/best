@@ -8,7 +8,7 @@ export default function Projects({}) {
       <div className="project" data-scroll-section>
         <nav className="project__nav">
           <div
-            onMouseEnter={hanbleBgChange}
+            onMouseEnter={hanbleChangeBackGround}
             onClick={handleProject}
             data-position={0}
           >
@@ -17,7 +17,7 @@ export default function Projects({}) {
             </p>
           </div>
           <div
-            onMouseEnter={hanbleBgChange}
+            onMouseEnter={hanbleChangeBackGround}
             onClick={handleProject}
             data-position={1}
           >
@@ -26,7 +26,7 @@ export default function Projects({}) {
             </p>
           </div>
           <div
-            onMouseEnter={hanbleBgChange}
+            onMouseEnter={hanbleChangeBackGround}
             onClick={handleProject}
             data-position={2}
           >
@@ -35,7 +35,7 @@ export default function Projects({}) {
             </p>
           </div>
           <div
-            onMouseEnter={hanbleBgChange}
+            onMouseEnter={hanbleChangeBackGround}
             onClick={handleProject}
             data-position={3}
           >
@@ -45,12 +45,12 @@ export default function Projects({}) {
           </div>
         </nav>
       </div>
-     {/* <FirstProject/> */}
+      <FirstProject/>
     </>
   );
 }
 
-const hanbleBgChange = function (e) {
+const hanbleChangeBackGround = function (e) {
   const value = e.target.dataset.position;
   const nameClass = ["flamme", "fleur", "women", "etoile"];
   const bg = document.querySelector(".project");
