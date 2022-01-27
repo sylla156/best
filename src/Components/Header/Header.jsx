@@ -16,8 +16,6 @@ const title = websiteContent().header.title;
     <header className="header" data-scroll-section>
       <Loader/>
      <Sidebar title={title} navTitle={navTitle} />
-     {/* <ParallaxEffect/> */}
-     {/* <Reseau/> */}
      <Content/>
     </header>
   );

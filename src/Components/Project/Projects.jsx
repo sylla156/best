@@ -1,6 +1,6 @@
 import React from "react";
-import "./project.scss";
-import FirstProject from "./Components/FirstProject";
+import "./projects.scss";
+import Project from "./Components/Project";
 
 export default function Projects({}) {
   return (
@@ -45,7 +45,7 @@ export default function Projects({}) {
           </div>
         </nav>
       </div>
-      <FirstProject/>
+      <Project/>
     </>
   );
 }

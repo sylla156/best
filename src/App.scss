@@ -38,7 +38,8 @@ body {
     display: flex;
     flex-direction: column;
     position: absolute;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     top: 0;
     left: 0;
     width: 100%;
