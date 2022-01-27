@@ -1,53 +1,49 @@
-import React,{ useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./projects.scss";
 import Project from "./Components/Project";
+import WebsiteContent from "../../assets/js/websiteContent";
 
 export default function Projects({}) {
- 
+  const titles = WebsiteContent().project.titles;
+  let isMobile = false;
+  const onChangeIsMobile = (e) => {
+    const width = e.target.innerWidth;
+    if (width < 700) {
+      isMobile = true;
+    } else if (width > 700) {
+      isMobile = false;
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", onChangeIsMobile);
+
+    return function reset() {
+      window.removeEventListener("resize", onChangeIsMobile);
+    };
+  }, []);
+
   return (
     <>
       <div className="project" data-scroll-section>
         <nav className="project__nav">
-          <div
-            onMouseOver={hanbleChangeBackGround}
-            onClick={handleProject}
-            data-position={0}
-          >
-            <p className="enable" data-position={0}>
-              <span>0.1</span> e-commerce
-            </p>
-          </div>
-          <div
-            onMouseEnter={hanbleChangeBackGround}
-            onClick={handleProject}
-            data-position={1}
-          >
-            <p data-position={1}>
-              <span> 0.2</span> gestion de stock
-            </p>
-          </div>
-          <div
-            onMouseEnter={hanbleChangeBackGround}
-            onClick={handleProject}
-            data-position={2}
-          >
-            <p data-position={2}>
-              <span>0.3</span> theme wordpress
-            </p>
-          </div>
-          <div
-            onMouseEnter={hanbleChangeBackGround}
-            onClick={handleProject} 
-          
-            data-position={3}
-          >
-            <p  data-position={3}>
-              <span> 0.4 </span> salle de sport
-            </p>
-          </div>
+          {titles.map((item, index) => {
+            return (
+              <div
+                onMouseEnter={isMobile ? console.log() : hanbleChangeBackGround}
+                onMouseMove={isMobile ? hanbleChangeBackGround : console.log()}
+                onClick={handleProject}
+                data-position={index}
+                key={index}
+              >
+                <p data-position={index}>
+                  <span>0.{1 + index}</span> {item}
+                </p>
+              </div>
+            );
+          })}
         </nav>
       </div>
-      <Project/>
+      <Project />
     </>
   );
 }
@@ -68,11 +64,6 @@ const hanbleChangeBackGround = function (e) {
       element[index].classList.remove("enable");
     }
   }
-  
- 
 };
 
-const handleProject = function (e) {
-  
-  
-};
+const handleProject = function (e) {};
