@@ -1,18 +1,19 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import "./projects.scss";
 import Project from "./Components/Project";
 
 export default function Projects({}) {
+ 
   return (
     <>
       <div className="project" data-scroll-section>
         <nav className="project__nav">
           <div
-            onMouseEnter={hanbleChangeBackGround}
+            onMouseOver={hanbleChangeBackGround}
             onClick={handleProject}
             data-position={0}
           >
-            <p className="enable">
+            <p className="enable" data-position={0}>
               <span>0.1</span> e-commerce
             </p>
           </div>
@@ -21,7 +22,7 @@ export default function Projects({}) {
             onClick={handleProject}
             data-position={1}
           >
-            <p>
+            <p data-position={1}>
               <span> 0.2</span> gestion de stock
             </p>
           </div>
@@ -30,16 +31,17 @@ export default function Projects({}) {
             onClick={handleProject}
             data-position={2}
           >
-            <p>
+            <p data-position={2}>
               <span>0.3</span> theme wordpress
             </p>
           </div>
           <div
             onMouseEnter={hanbleChangeBackGround}
-            onClick={handleProject}
+            onClick={handleProject} 
+          
             data-position={3}
           >
-            <p>
+            <p  data-position={3}>
               <span> 0.4 </span> salle de sport
             </p>
           </div>
@@ -70,4 +72,7 @@ const hanbleChangeBackGround = function (e) {
  
 };
 
-const handleProject = function (e) {};
+const handleProject = function (e) {
+  
+  
+};

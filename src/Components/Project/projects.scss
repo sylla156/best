@@ -1,4 +1,5 @@
 @use '../../assets/scss/theme.scss' as *;
+@use '../../assets/scss/mixin.scss' as *;
 .project {
     margin: 0;
     padding: 0;
@@ -24,6 +25,18 @@
             p {
                 font-size: 6vw;
                 height: 100%;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .project {
+        &__nav {
+            div {
+                p {
+                    font-size: 10vw;
+                }
             }
         }
     }

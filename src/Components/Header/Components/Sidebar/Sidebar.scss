@@ -2,7 +2,7 @@
 @use "../../../../assets/scss/mixin.scss" as *;
 .sidebar {
     height: 8vh;
-    width: 100vw;
+    min-width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,7 +11,7 @@
     &__title {
         width: 30vw;
         margin: 0 0 0 3em;
-        font-size: small;
+        font-size: 2.5vw;
     }
     &__btn {
         margin: 1em 3em 0 0;
