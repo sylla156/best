@@ -49,6 +49,7 @@ export default function Projects({}) {
 }
 
 const hanbleChangeBackGround = function (e) {
+  
   const value = e.target.dataset.position;
   const nameClass = ["flamme", "fleur", "women", "etoile"];
   const bg = document.querySelector(".project");
@@ -66,4 +67,6 @@ const hanbleChangeBackGround = function (e) {
   }
 };
 
-const handleProject = function (e) {};
+const handleProject = function (e) {
+  
+};
