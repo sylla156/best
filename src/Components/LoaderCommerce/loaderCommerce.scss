@@ -1,17 +1,18 @@
+@use '../../assets/scss/theme.scss' as *;
 .loaderCommerce {
     position: absolute;
-    height: 0;
+    height: 100vh;
     width: 100vw;
     z-index: 20;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
     display: flex;
-    background-color: bisque;
+    background-color: $firstColor;
 }
 
 .element {
-    height: 100%;
+    height: 0vh;
     width: calc(100% / 3);
-    background-color: black;
+    background-color: $backgroundColor;
 }
