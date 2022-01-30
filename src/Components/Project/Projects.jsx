@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./projects.scss";
-import Project from "./Components/Project";
 import WebsiteContent from "../../assets/js/websiteContent";
 
-export default function Projects({}) {
+export default function Projects({ onChangeVisibility }) {
   const titles = WebsiteContent().project.titles;
+  const trye = "kk";
   let isMobile = false;
+
   const onChangeIsMobile = (e) => {
     const width = e.target.innerWidth;
     if (width < 700) {
@@ -22,38 +23,39 @@ export default function Projects({}) {
     };
   }, []);
 
+  const handleProject = function (e) {
+    const position = e.target.dataset.position;
+    onChangeVisibility(position);
+  };
+
   return (
-    <>
-      <div className="project" data-scroll-section>
-        <nav className="project__nav">
-          {titles.map((item, index) => {
-            return (
-              <div
-                onMouseEnter={isMobile ? console.log() : hanbleChangeBackGround}
-                onMouseMove={isMobile ? hanbleChangeBackGround : console.log()}
-                onClick={handleProject}
-                data-position={index}
-                key={index}
-              >
-                <p data-position={index}>
-                  <span>0.{1 + index}</span> {item}
-                </p>
-              </div>
-            );
-          })}
-        </nav>
-      </div>
-      <Project />
-    </>
+    <div className="projects" data-scroll-section>
+      <nav className="projects__nav">
+        {titles.map((item, index) => {
+          return (
+            <div
+              onMouseEnter={isMobile ? console.log() : hanbleChangeBackGround}
+              onMouseMove={isMobile ? hanbleChangeBackGround : console.log()}
+              onClick={handleProject}
+              data-position={index}
+              key={index}
+            >
+              <p data-position={index}>
+                <span>0.{1 + index}</span> {item}
+              </p>
+            </div>
+          );
+        })}
+      </nav>
+    </div>
   );
 }
 
 const hanbleChangeBackGround = function (e) {
-  
   const value = e.target.dataset.position;
   const nameClass = ["flamme", "fleur", "women", "etoile"];
-  const bg = document.querySelector(".project");
-  const element = document.querySelectorAll(".project__nav div p");
+  const bg = document.querySelector(".projects");
+  const element = document.querySelectorAll(".projects__nav div p");
   for (let index = 0; index < nameClass.length; index++) {
     const item = nameClass[index];
     if (index == value) {
@@ -65,8 +67,4 @@ const hanbleChangeBackGround = function (e) {
       element[index].classList.remove("enable");
     }
   }
-};
-
-const handleProject = function (e) {
-  
 };

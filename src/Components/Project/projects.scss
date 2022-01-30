@@ -1,6 +1,6 @@
 @use '../../assets/scss/theme.scss' as *;
 @use '../../assets/scss/mixin.scss' as *;
-.project {
+.projects {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -31,7 +31,7 @@
 }
 
 @include mobile {
-    .project {
+    .projects {
         &__nav {
             div {
                 p {

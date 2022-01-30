@@ -1,0 +1,17 @@
+.loaderCommerce {
+    position: absolute;
+    height: 0;
+    width: 100vw;
+    z-index: 20;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    background-color: bisque;
+}
+
+.element {
+    height: 100%;
+    width: calc(100% / 3);
+    background-color: black;
+}
