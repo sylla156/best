@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./Sidebar.scss";
 
-export default function Sidebar({ title,navTitle }) {
+export default function Sidebar({ title, navTitle }) {
   let [nameClassChoose, handleChangeNameClassChoose] = useState(false);
+  const [btn, onChangeBtn] = useState(undefined);
   function onHanbleNavbar() {
     handleChangeNameClassChoose(!nameClassChoose);
   }
@@ -13,13 +14,19 @@ export default function Sidebar({ title,navTitle }) {
         onHanbleNavbar={onHanbleNavbar}
         title={title}
         nameClassChoose={nameClassChoose}
+        onChangeBtn={onChangeBtn}
       />
-      <NavBar nameClassChoose={nameClassChoose} navTitle={navTitle} />
+      <NavBar nameClassChoose={nameClassChoose} navTitle={navTitle} btn={btn} />
     </>
   );
 }
 
-function NavBtn({ title, onHanbleNavbar, nameClassChoose }) {
+function NavBtn({ title, onHanbleNavbar, nameClassChoose, onChangeBtn }) {
+  const btn = useRef();
+
+  useEffect(() => {
+    onChangeBtn(btn);
+  });
   return (
     <div className="sidebar">
       <h1 className="sidebar__title">{title}</h1>
@@ -28,6 +35,7 @@ function NavBtn({ title, onHanbleNavbar, nameClassChoose }) {
           nameClassChoose ? "btn__enable" : "btn__disable"
         }`}
         onClick={onHanbleNavbar}
+        ref={btn}
       >
         <p className="sidebar__btn--element1"></p>
         <p className="sidebar__btn--element2"></p>
@@ -37,16 +45,25 @@ function NavBtn({ title, onHanbleNavbar, nameClassChoose }) {
   );
 }
 
-function NavBar({ nameClassChoose, navTitle }) {
+function NavBar({ nameClassChoose, navTitle, btn }) {
   let nameClass = nameClassChoose ? "nav__enable" : "nav__disable";
+  const move = useCallback((e) => {
+    const value = e.target.innerText.toLowerCase();
+    btn.current.click();
+  });
+
   return (
     <div className={nameClass}>
       <div className="nav">
-       {
-         navTitle.map((title,key)=>(
-           <p  onMouseMove={MouseEffect}  key={key}>{title}</p>
-         ))
-       }
+        <p onMouseMove={MouseEffect} onClick={move}>
+          <a href=""> {navTitle[0]}</a>
+        </p>
+        <p onMouseMove={MouseEffect} onClick={move}>
+          <a href="#project"> {navTitle[1]}</a>
+        </p>
+        <p onMouseMove={MouseEffect} onClick={move}>
+          <a href=""> {navTitle[2]}</a>
+        </p>
       </div>
       <div className="navImg"></div>
     </div>
@@ -58,32 +75,34 @@ function MouseEffect(event) {
     x: 0,
     y: 0,
   };
- 
+
   mouse.x = event.pageX;
   mouse.y = event.pageY;
   const img = document.querySelector(".navImg");
-  
-      img.style.transform =  `translate(${mouse.x - img.offsetWidth/2}px, ${mouse.y - img.offsetHeight/2}px)`;
+
+  img.style.transform = `translate(${mouse.x - img.offsetWidth / 2}px, ${
+    mouse.y - img.offsetHeight / 2
+  }px)`;
 
   switch (event.target.innerText) {
     case "ABOUT":
-      img.classList.add('about');
-      img.classList.remove('works',"contact");
+      img.classList.add("about");
+      img.classList.remove("works", "contact");
       break;
 
     case "WORKS":
-        img.classList.add('works');
-        img.classList.remove('about',"contact");
+      img.classList.add("works");
+      img.classList.remove("about", "contact");
 
       break;
 
     case "CONTACT":
-        img.classList.add('contact');
-        img.classList.remove('works',"about");
+      img.classList.add("contact");
+      img.classList.remove("works", "about");
       break;
 
     default:
-      img.classList.remove('works',"about",'contact');
+      img.classList.remove("works", "about", "contact");
       break;
   }
 }

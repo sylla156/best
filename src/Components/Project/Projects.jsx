@@ -29,7 +29,7 @@ export default function Projects({ onChangeVisibility }) {
   };
 
   return (
-    <div className="projects" data-scroll-section>
+    <div className="projects" id="project">
       <nav className="projects__nav">
         {titles.map((item, index) => {
           return (

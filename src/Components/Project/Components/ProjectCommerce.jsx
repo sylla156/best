@@ -12,12 +12,11 @@ export default function ProjectCommerce({onChangeVisibility}) {
 useEffect(() => {
   const page = container.current.parentElement;
   gsap.registerPlugin(ScrollTrigger);
-
   page.scroll(0,0);
 })
 
   const out = function () {
-    onChangeVisibility(false);
+    onChangeVisibility(null);
   };
 
  
