@@ -10,36 +10,48 @@ export default function LoaderCommerce({}) {
   const element3 = useRef();
 
   const inverse = function(){
-    gsap.to(container.current, {
-        duration: 2,
+   
+      gsap.to(element1.current, {
+        duration: 1,
         height: () => innerHeight,
         ease: "bounce.out",
       });
   
+      gsap.to(element2.current, {
+        duration: 1,
+        height: () => innerHeight,
+        ease: "bounce.out",
+      });
+  
+      gsap.to(element3.current, {
+        duration: 1,
+        height: () => innerHeight,
+        ease: "bounce.out",
+      });
+
       gsap.to(element1.current, {
-        delay: 2,
+        delay: 1,
         duration: 1,
         height: 0,
       });
   
       gsap.to(element2.current, {
-        delay: 2.4,
+        delay: 1.4,
         duration: 1,
         height: 0,
       });
   
       gsap.to(element3.current, {
-        delay: 2.8,
+        delay: 1.8,
         duration: 1,
         height: 0,
       });
   
       gsap.to(container.current, {
-          delay:3,
+          delay:2.1,
           duration: 2,
-          height: () => innerHeight,
-          width:0,
-          ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
+          height: 0,
+          ease: "expo.out"
         });
   }
   
