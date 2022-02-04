@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import "./loaderCommerce.scss";
 import gsap from "gsap";
-import CustomEase from "gsap/CustomEase";
 
-export default function LoaderCommerce({}) {
+
+export default function LoaderCommerce({onChangeVisibility}) {
   const container = useRef();
   const element1 = useRef();
   const element2 = useRef();
@@ -56,8 +56,8 @@ export default function LoaderCommerce({}) {
   }
   
   useEffect(() => {
-      inverse()
-  });
+      inverse();
+  },[]);
 
   return (
     <div className="loaderCommerce" ref={container}>

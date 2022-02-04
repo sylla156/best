@@ -1,25 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./projectCommerce.scss";
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/scrollTrigger';
 import desktop from './img/Desktop.png';
 import form from './img/form.png';
 import contact from './img/contact.png';
-export default function ProjectCommerce() {
+export default function ProjectCommerce({onChangeVisibility}) {
   const container = useRef();
   const element = useRef();
-
 
 useEffect(() => {
   const page = container.current.parentElement;
   gsap.registerPlugin(ScrollTrigger);
 
- 
+  page.scroll(0,0);
 })
 
   const out = function () {
-    console.log("ll");
+    onChangeVisibility(false);
   };
+
+ 
+
   return (
     <div className="projectCommerce" ref={container}>
       <Exit exits={out} />

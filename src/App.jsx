@@ -10,7 +10,8 @@ import LoaderCommerce from "./Components/LoaderCommerce/LoaderCommerce";
 
 export default function App() {
   const container = useRef();
-  const [visibility,onChangeVisibility] = useState(null)
+  const [visibility,onChangeVisibility] = useState(null);
+  const [projet, onChangeProjet] = useState(false);
   useEffect(() => {
     const { bind, unbind } = createScrollSnap(container.current, {
       snapDestinationX: "0%",
@@ -37,10 +38,10 @@ export default function App() {
   return (
       <>
      <div ref={container} className="page">
-       {(false === null) && <Header /> }
-       { (false === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
-       { !(null === null) && <LoaderCommerce/>}
-       { !(false === null) && <ProjecCommerce/>}
+       {(visibility === null) && <Header /> }
+       { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
+       { !(visibility === null) && <LoaderCommerce onChangeVisibility = {onChangeProjet} />}
+       {  !(visibility === null) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
       </div>)
       </>
   );
