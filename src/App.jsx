@@ -4,7 +4,7 @@ import "./App.scss";
 import Projects from "./Components/Project/Projects";
 import ProjecCommerce from "./Components/Project/Components/Commerce/ProjectCommerce"
 import createScrollSnap from "scroll-snap";
-import LoaderCommerce from "./Components/Project/Components/Commerce/LoaderCommerce/LoaderCommerce";
+import Space from "./Components/Project/Components/Space/Space";
 
 
 export default function App() {
@@ -39,6 +39,7 @@ export default function App() {
        {(visibility === null) && <Header /> }
        { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
        { (visibility == 0) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
+       { (visibility == 1) && <Space onChangeVisibility={onChangeVisibility}/>}
       </div>)
       </>
   );
