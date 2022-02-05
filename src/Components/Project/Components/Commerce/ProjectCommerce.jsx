@@ -5,7 +5,10 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 import desktop from './img/Desktop.png';
 import form from './img/form.png';
 import contact from './img/contact.png';
-import LoaderCommerce from "./LoaderCommerce/LoaderCommerce";
+import LoaderProject from '../LoaderProject/LoaderProject';
+
+
+
 export default function ProjectCommerce({onChangeVisibility}) {
   const container = useRef();
   const element = useRef();
@@ -25,7 +28,7 @@ useEffect(() => {
   return (
     <div className="projectCommerce" ref={container}>
       <Exit exits={out} />
-      <LoaderCommerce/>
+      <LoaderProject/>
       <div className="projectCommerce__header">
         <div className="projectCommerce__header--title">
           <h1 className="main">ecommerce</h1>

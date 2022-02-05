@@ -1,3 +1,95 @@
-h1 {
-    color: red;
+@use '../../../../assets/scss/theme.scss' as *;
+@use '../../../../assets/scss/mixin.scss' as *;
+.spaces {
+    color: $spaceColor;
+    background-color: $spaceBackgroundColor;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Coldiac Free', sans-serif;
+    &__header {
+        height: 100vh;
+        width: 90vw;
+        margin: auto;
+        &--contentOne {
+            height: 30vh;
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            p {
+                width: 30%;
+                text-align: justify;
+                font-size: 1.4vw;
+            }
+        }
+        &--title {
+            display: grid;
+            grid-template: 1fr 1fr 1fr / 1.4fr 1fr;
+            height: 50vh;
+            span {
+                font-size: 8vw;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            &>span:nth-child(4) {
+                grid-row-start: 3;
+                grid-column-start: 2;
+            }
+            &>span:nth-child(3) {
+                grid-column: 1 / span 3;
+                text-indent: 10vw;
+            }
+        }
+        &--contentTwo {
+            height: 20vh;
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            p {
+                width: 30%;
+                text-align: justify;
+                font-size: 1.4vw;
+            }
+        }
+    }
+}
+
+@include mobile() {
+    .spaces {
+        &__header {
+            &--contentOne {
+                p {
+                    width: 100%;
+                    font-size: 5vw;
+                }
+            }
+            &--title {
+                display: block;
+                height: 40vh;
+                span {
+                    display: block;
+                    text-indent: 0 !important;
+                    font-size: 11vw;
+                }
+            }
+            &--contentTwo {
+                p {
+                    width: 100%;
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+}
+
+@include tab() {
+    .spaces {
+        p {
+            font-size: 3vw;
+            width: 60%;
+        }
+    }
 }

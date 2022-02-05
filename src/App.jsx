@@ -36,10 +36,10 @@ export default function App() {
   return (
       <>
      <div ref={container} className="page">
-       {(visibility === null) && <Header /> }
+       {/* { (visibility === null) && <Header /> }
        { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
-       { (visibility == 0) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
-       { (visibility == 1) && <Space onChangeVisibility={onChangeVisibility}/>}
+       { (visibility == 0) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>} */}
+       { (1 == 1) && <Space onChangeVisibility={onChangeVisibility}/>}
       </div>)
       </>
   );
