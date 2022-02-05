@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "./Components/Header/Header";
 import "./App.scss";
 import Projects from "./Components/Project/Projects";
-import ProjecCommerce from "./Components/Project/Components/ProjectCommerce"
+import ProjecCommerce from "./Components/Project/Components/Commerce/ProjectCommerce"
 import createScrollSnap from "scroll-snap";
-import ProjectCommerce from "./Components/Project/Components/ProjectCommerce";
-import LoaderCommerce from "./Components/LoaderCommerce/LoaderCommerce";
+import LoaderCommerce from "./Components/Project/Components/Commerce/LoaderCommerce/LoaderCommerce";
 
 
 export default function App() {
@@ -30,7 +29,7 @@ export default function App() {
 
   const content = <h1>hello world</h1>
   useEffect(() => {
-      console.log(visibility);
+      console.log();
   },[visibility])
 
 

@@ -5,11 +5,10 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 import desktop from './img/Desktop.png';
 import form from './img/form.png';
 import contact from './img/contact.png';
-import LoaderCommerce from "../../LoaderCommerce/LoaderCommerce";
+import LoaderCommerce from "./LoaderCommerce/LoaderCommerce";
 export default function ProjectCommerce({onChangeVisibility}) {
   const container = useRef();
   const element = useRef();
-  let pageTop = 0;
 
 useEffect(() => {
   gsap.registerPlugin(ScrollTrigger);

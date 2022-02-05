@@ -25,7 +25,6 @@ export default function Projects({ onChangeVisibility }) {
 
   const handleProject = function (e) {
     const position = e.target.dataset.position;
-    console.log(position);
     onChangeVisibility(position);
   };
 
