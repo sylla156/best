@@ -16,7 +16,7 @@ export default function App() {
       snapDestinationX: "0%",
       snapDestinationY: "100vh",
       timeout: 100,
-      duration: 200,
+      duration: 100,
       threshold: 0.3,
       snapStop: false,
     });
@@ -37,10 +37,10 @@ export default function App() {
   return (
       <>
      <div ref={container} className="page">
-       {(visibility === null) && <Header /> }
-       { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
-       { !(visibility === null) && <LoaderCommerce />}
-       {  !(visibility === null) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
+       {(false === null) && <Header /> }
+       { (false === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
+       { !(null === null) && <LoaderCommerce />}
+       {  !(false === null) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
       </div>)
       </>
   );
