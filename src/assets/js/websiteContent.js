@@ -15,7 +15,7 @@ export default function WebsiteContent() {
         project: {
             titles: [
                 'e-commerce',
-                'inventory management',
+                'space',
                 'WordPress theme',
                 'sports Hall'
             ]

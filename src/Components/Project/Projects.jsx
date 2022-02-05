@@ -54,7 +54,7 @@ export default function Projects({ onChangeVisibility }) {
 
 const hanbleChangeBackGround = function (e) {
   const value = e.target.dataset.position;
-  const nameClass = ["flamme", "fleur", "women", "etoile"];
+  const nameClass = ["flamme", "space", "women", "etoile"];
   const bg = document.querySelector(".projects");
   const element = document.querySelectorAll(".projects__nav div p");
   for (let index = 0; index < nameClass.length; index++) {
