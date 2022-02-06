@@ -25,6 +25,11 @@ useEffect(() => {
   onChangeVisibility(null);
 },[])
 
+const nextProject = useCallback(() => {
+   onChangeVisibility(0);
+},[])
+
+
   return (
     <div className="projectCommerce" ref={container}>
       <Exit exits={out} />
@@ -104,10 +109,10 @@ useEffect(() => {
         <div className="projectCommerce__image--three">
           <img src={contact} alt="le troisieme image de mes projet" /></div>
       </div>
-      <div className="projectCommerce__next">
+      <div className="projectCommerce__next" onClick={nextProject}>
         <div>
         <h3>next Projet</h3>
-        <h1>project name</h1>
+        <h1>spaces</h1>
       </div>
         </div>
     </div>

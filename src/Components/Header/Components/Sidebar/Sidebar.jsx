@@ -64,6 +64,9 @@ function NavBar({ nameClassChoose, navTitle, btn }) {
         <p onMouseMove={MouseEffect} onClick={move}>
           <a href=""> {navTitle[2]}</a>
         </p>
+        <p onMouseMove={MouseEffect} onClick={move}>
+          <a href="#skills"> {navTitle[3]}</a>
+        </p>
       </div>
       <div className="navImg"></div>
     </div>
@@ -75,7 +78,6 @@ function MouseEffect(event) {
     x: 0,
     y: 0,
   };
-
   mouse.x = event.pageX;
   mouse.y = event.pageY;
   const img = document.querySelector(".navImg");
@@ -87,22 +89,27 @@ function MouseEffect(event) {
   switch (event.target.innerText) {
     case "ABOUT":
       img.classList.add("about");
-      img.classList.remove("works", "contact");
+      img.classList.remove("works", "contact", "skills");
       break;
 
     case "WORKS":
       img.classList.add("works");
-      img.classList.remove("about", "contact");
+      img.classList.remove("about", "contact", "skills");
 
       break;
 
     case "CONTACT":
       img.classList.add("contact");
-      img.classList.remove("works", "about");
+      img.classList.remove("works", "about","skills");
+      break;
+
+      case "SKILLS":
+      img.classList.add("skills");
+      img.classList.remove("works", "about",'contact');
       break;
 
     default:
-      img.classList.remove("works", "about", "contact");
+      img.classList.remove("works", "about", "contact","skills");
       break;
   }
 }

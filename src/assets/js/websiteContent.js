@@ -5,7 +5,8 @@ export default function WebsiteContent() {
             navTitle: [
                 'about',
                 'works',
-                'contact'
+                'contact',
+                'skills'
             ],
             content: [
                 'developper',
@@ -14,10 +15,8 @@ export default function WebsiteContent() {
         },
         project: {
             titles: [
-                'e-commerce',
                 'space',
-                'WordPress theme',
-                'sports Hall'
+                'Ecommerce',
             ]
         }
     });

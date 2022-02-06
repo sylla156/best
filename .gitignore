@@ -40,13 +40,17 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+src\Components\Project\Components\Space\img
 # TypeScript v1 declaration files
 typings/
 
 # TypeScript cache
 *.tsbuildinfo
-
+*.zip
+*.mp4
+*.png
+*.jpg
+header1.mp4
 # Optional npm cache directory
 .npm
 
@@ -102,3 +106,4 @@ dist
 
 # TernJS port file
 .tern-port
+

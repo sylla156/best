@@ -1,6 +1,6 @@
 @use '../../../../assets/scss/theme.scss' as *;
 .loaderCommerce {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     z-index: 20;

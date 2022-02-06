@@ -11,7 +11,7 @@
     justify-content: start;
     align-items: center;
     background-color: black;
-    background-image: url(./img/space.jpg);
+    background-image: url(./img/etoile.jpg);
     background-position: center;
     background-size: cover;
     font-family: 'Neonderthaw', cursive;
@@ -32,6 +32,7 @@
 
 @include mobile {
     .projects {
+        background-image: url(./img/space.jpg);
         &__nav {
             div {
                 p {
