@@ -47,10 +47,6 @@ typings/
 # TypeScript cache
 *.tsbuildinfo
 *.zip
-*.mp4
-*.png
-*.jpg
-header1.mp4
 # Optional npm cache directory
 .npm
 
