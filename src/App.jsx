@@ -38,12 +38,13 @@ export default function App() {
   return (
       <>
      <div ref={container} className="page">
-       {(visibility === null) && <Header /> }
-       { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
-       { (visibility == 1) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
-       { (visibility == 0) && <Space onChangeVisibility={onChangeVisibility}/>}
-       { (visibility === null ) && <Skills/>}f2e9e4
-       { (visibility === null) && <Contact/>}
+       {(false === null) && <Header /> }
+       { (false === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
+       { (false == 1) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
+       { (true == 0) && <Space onChangeVisibility={onChangeVisibility}/>}
+       { (false === null ) && <Skills/>}
+       { (null === null) && <About/>}
+       { (false === null) && <Contact/>}
       </div>)
       </>
   );
