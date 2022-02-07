@@ -22,8 +22,8 @@
         z-index: 10;
         div {
             p {
-                font-size: 6vw;
-                height: 100%;
+                font-size: 10vw;
+                transition: all 1s;
             }
         }
     }
@@ -48,26 +48,13 @@
     background-size: cover;
 }
 
-.flamme {
-    background-image: url(./img/flamme.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
 .space {
     background-image: url(./img/space.jpg   );
     background-position: center;
     background-size: cover;
 }
 
-.women {
-    background-image: url(./img/women.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
 .enable {
-    transition: font-size transform 1s;
     color: $threeColor;
-    transform: translate(8vw, 0) scale(0.8);
+    transform: translate(8vw, 0) scale(0.9);
 }
