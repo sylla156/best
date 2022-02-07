@@ -7,6 +7,7 @@ import createScrollSnap from "scroll-snap";
 import Space from "./Components/Project/Components/Space/Space";
 import About from "./Components/About/About";
 import Skills from './Components/Skills/Skills';
+import Contact from './Components/Contact/Contact';
 
 export default function App() {
   const container = useRef();
@@ -14,7 +15,7 @@ export default function App() {
   useEffect(() => {
     const { bind, unbind } = createScrollSnap(container.current, {
       snapDestinationX: "0%",
-      snapDestinationY: "-100vh",
+      snapDestinationY: "100vh",
       timeout: 100,
       duration: 100,
       threshold: 0.3,
@@ -41,7 +42,8 @@ export default function App() {
        { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
        { (visibility == 1) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
        { (visibility == 0) && <Space onChangeVisibility={onChangeVisibility}/>}
-       { (visibility === null ) && <Skills/>}
+       { (visibility === null ) && <Skills/>}f2e9e4
+       { (visibility === null) && <Contact/>}
       </div>)
       </>
   );
