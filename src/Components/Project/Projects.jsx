@@ -23,7 +23,8 @@ export default function Projects({ onChangeVisibility }) {
   }, []);
 
   const handleProject = function (e) {
-    const position = e.target.dataset.position;
+    const position = e.target.dataset.index;
+    console.log(position);
     onChangeVisibility(position);
   };
 
@@ -52,7 +53,7 @@ export default function Projects({ onChangeVisibility }) {
               data-position={index}
               key={index}
             >
-              <p >
+              <p data-index={index}>
                 <span>0.{1 + index}</span> {item}
               </p>
             </section>

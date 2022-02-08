@@ -192,6 +192,13 @@
                     font-size: 2em;
                     margin: 0;
                 }
+                h4 {
+                    text-align: end;
+                    font-size: 1.5em;
+                    a {
+                        text-decoration: none;
+                    }
+                }
             }
         }
     }
@@ -274,6 +281,13 @@
                     }
                     h3 {
                         font-size: 1.5em;
+                    }
+                    h4 {
+                        text-align: end;
+                        font-size: 1.5em;
+                        a {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
