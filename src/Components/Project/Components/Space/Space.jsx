@@ -93,7 +93,7 @@ export default function Space({ onChangeVisibility }) {
         <div className="spaces__footer--next" onClick={nextProject}>
           <div>
             <h3>next project</h3>
-            <h4><a href="google.com">view the website</a></h4>
+            <h4><a href="https://project2-ruby.vercel.app/" target='_blank'>view the website</a></h4>
             <h1>commerce</h1>
           </div>
         </div>

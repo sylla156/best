@@ -31,6 +31,7 @@ body {
     padding: 0;
     a {
         color: $firstColor;
+        cursor: none !important;
     }
 }
 
@@ -48,4 +49,15 @@ body {
     padding: 0;
     scroll-behavior: smooth;
     font-family: 'Quintessential', cursive;
+    cursor: none !important;
+}
+
+.cursor {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    z-index: 10000;
 }

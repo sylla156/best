@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./projects.scss";
 import WebsiteContent from "../../assets/js/websiteContent";
 
@@ -28,6 +28,36 @@ export default function Projects({ onChangeVisibility }) {
     onChangeVisibility(position);
   };
 
+const  hanbleChangeBackGround = useCallback((e) => {
+  const value = e.target.dataset.position;
+  const nameClass = ["space", "commerce"];
+  const bg = e.target;
+  const element = document.querySelectorAll(".projects__nav section");
+  for (let index = 0; index < nameClass.length; index++) {
+    const item = nameClass[index];
+    if (index == value) {
+      bg.classList.add(item);
+      element[index].classList.add("enable");
+      continue;
+    } else {
+      bg.classList.remove(item);
+      element[index].classList.remove("enable");
+    }
+  }
+},[])
+
+const reset = useCallback((e) => {
+  
+const position = e.target.dataset.position;
+
+if(position == 0) {
+  e.target.parentElement.children[1].classList.remove('commerce')
+}else if(position == 1){
+  e.target.parentElement.children[0].classList.remove('space')
+}
+
+})
+ 
   return (
     <div className="projects" id="project">
       <div className="projects__title">
@@ -46,8 +76,7 @@ export default function Projects({ onChangeVisibility }) {
         {titles.map((item, index) => {
           return (
             <section
-              onMouseEnter={isMobile ? console.log() : hanbleChangeBackGround}
-              onMouseMove={isMobile ? hanbleChangeBackGround : console.log()}
+              onMouseEnter={hanbleChangeBackGround}
               onMouseLeave={reset}
               onClick={handleProject}
               data-position={index}
@@ -63,25 +92,3 @@ export default function Projects({ onChangeVisibility }) {
     </div>
   );
 }
-
-const hanbleChangeBackGround = function (e) {
-  const value = e.target.dataset.position;
-  const nameClass = ["space", "commerce"];
-  const bg = e.target;
-  const element = document.querySelectorAll(".projects__nav section");
-  for (let index = 0; index < nameClass.length; index++) {
-    const item = nameClass[index];
-    if (index == value) {
-      bg.classList.add(item);
-      element[index].classList.add("enable");
-      continue;
-    } else {
-      bg.classList.remove(item);
-      element[index].classList.remove("enable");
-    }
-  }
-};
-
-const reset = function (e) {
-  e.target.classList.remove("space", "commerce");
-};

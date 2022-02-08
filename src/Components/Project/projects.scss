@@ -51,12 +51,7 @@
         }
         &>section:first-child {
             border-bottom: none;
-            p {
-                cursor: pointer;
-                padding: 10vh;
-            }
         }
-        &>section:last-child {}
     }
 }
 

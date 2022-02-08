@@ -15,10 +15,7 @@ export default function About({}) {
       <div className="aboutProject__content">
         <div className="aboutProject__content--description">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-            doloribus cumque dicta neque! Quae, doloremque voluptatem? Maiores
-            vel enim aliquam blanditiis unde ipsum, molestias architecto nobis
-            iure? Odio excepturi quam explicabo consequatur, iusto 
+          I am a <b> full stack developer</b> with <b>three years of experience</b> as a developer and I am a three year student and my main language is <b>javascript and php</b>
           </p>
         </div>
 

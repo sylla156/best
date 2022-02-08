@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Header from "./Components/Header/Header";
 import "./App.scss";
 import Projects from "./Components/Project/Projects";
@@ -11,6 +11,7 @@ import Contact from './Components/Contact/Contact';
 
 export default function App() {
   const container = useRef();
+  const cursor = useRef();
   const [visibility,onChangeVisibility] = useState(null);
   useEffect(() => {
     const { bind, unbind } = createScrollSnap(container.current, {
@@ -33,11 +34,19 @@ export default function App() {
   useEffect(() => {
       console.log();
   },[visibility])
+  
 
+  const cur = useCallback((e)=> {
+    const cus =  cursor.current;
+    const x = e.pageX;
+    const y = e.pageY;
+    cus.style.transform = `translate(${x}px,${y}px)`
+  },[])
 
   return (
-      <>
-     <div ref={container} className="page">
+      < >
+       <div className="cursor" ref={cursor}></div>
+     <div ref={container} className="page"  onMouseMove={cur}>
        {(visibility === null) && <Header /> }
        { (visibility === null) && <Projects onChangeVisibility={onChangeVisibility}/>}
        { (visibility == 1) && <ProjecCommerce onChangeVisibility={onChangeVisibility}/>}
@@ -49,4 +58,5 @@ export default function App() {
       </>
   );
 }
+
 
