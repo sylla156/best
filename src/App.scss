@@ -53,12 +53,40 @@ body {
 }
 
 .cursor {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     background-color: aliceblue;
     border-radius: 50%;
-    mix-blend-mode: difference;
     z-index: 10000;
-    transition: all 0.1s;
+    transition: width height 1s;
+    mix-blend-mode: difference;
+}
+
+.cursorAfter::after {
+    content: 'click';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.cursorAfter {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.cursorBefore::before {
+    content: 'skill';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.cursorBefore {
+    width: 60px !important;
+    height: 60px !important;
 }

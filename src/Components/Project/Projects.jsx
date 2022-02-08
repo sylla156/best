@@ -52,8 +52,7 @@ const  hanbleChangeBackGround = useCallback((e) => {
 const cursorBig = useCallback((e) => {
   const element = e.target;
   const cursor = document.querySelector('.cursor');
-  cursor.style.height  = 60 + 'px';
-  cursor.style.width  = 60 + 'px';
+  cursor.classList.add('cursorAfter');
 
 
 })
@@ -62,8 +61,8 @@ const cursorBig = useCallback((e) => {
 const cursorReset = useCallback((e) => {
   const element = e.target;
   const cursor = document.querySelector('.cursor');
-  cursor.style.height  = 25 + 'px';
-  cursor.style.width  = 25 + 'px';
+  cursor.classList.remove('cursorAfter');
+
 
 
 })

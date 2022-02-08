@@ -112,4 +112,5 @@ function MouseEffect(event) {
       img.classList.remove("works", "about", "contact","skills");
       break;
   }
+
 }
