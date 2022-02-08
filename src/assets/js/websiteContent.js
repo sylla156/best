@@ -4,7 +4,7 @@ export default function WebsiteContent() {
             title: 'sylla ibrahim',
             navTitle: [
                 'about',
-                'works',
+                'Project',
                 'contact',
                 'skills'
             ],

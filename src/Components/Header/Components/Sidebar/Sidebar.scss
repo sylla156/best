@@ -95,7 +95,7 @@
     transform: translate(-50%, -50%);
     background-color: $firstColor;
     z-index: 8;
-    transition: all 1s cubic-bezier(.99, .98, .88, .12);
+    transition: all 1s cubic-bezier(.56, .57, .03, .97);
     padding-top: 12vh;
     pointer-events: visible;
     a {

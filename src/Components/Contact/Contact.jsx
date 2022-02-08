@@ -12,7 +12,7 @@ const send = useCallback((e) => {
 }) 
 
   return (
-    <div className="contactProject" onMouseMove={send}> 
+    <div className="contactProject" onMouseMove={send} id='contact'> 
       <div className="contactProject__title">
         <span>let's</span>
         <span>talk</span>

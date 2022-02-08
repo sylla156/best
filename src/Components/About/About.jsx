@@ -4,7 +4,7 @@ import self from "./img/self.jpg";
 
 export default function About({}) {
   return (
-    <div className="aboutProject">
+    <div className="aboutProject" id='about'>
       <div className="aboutProject__title">
         <h1>
           <span>sylla</span>

@@ -56,13 +56,13 @@ function NavBar({ nameClassChoose, navTitle, btn }) {
     <div className={nameClass}>
       <div className="nav">
         <p onMouseMove={MouseEffect} onClick={move}>
-          <a href=""> {navTitle[0]}</a>
+          <a href="#about"> {navTitle[0]}</a>
         </p>
         <p onMouseMove={MouseEffect} onClick={move}>
           <a href="#project"> {navTitle[1]}</a>
         </p>
         <p onMouseMove={MouseEffect} onClick={move}>
-          <a href=""> {navTitle[2]}</a>
+          <a href="#contact"> {navTitle[2]}</a>
         </p>
         <p onMouseMove={MouseEffect} onClick={move}>
           <a href="#skills"> {navTitle[3]}</a>
@@ -92,7 +92,7 @@ function MouseEffect(event) {
       img.classList.remove("works", "contact", "skills");
       break;
 
-    case "WORKS":
+    case "PROJECT":
       img.classList.add("works");
       img.classList.remove("about", "contact", "skills");
 
