@@ -5,6 +5,7 @@
     width: 100vw;
     z-index: 20;
     pointer-events: none;
+    mix-blend-mode: difference;
     &>div {
         position: absolute;
         background-color: $firstColor;

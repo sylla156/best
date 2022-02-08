@@ -10,6 +10,7 @@
     align-items: center;
     border: 1px dashed $colorProjet;
     transition: all 0.5s;
+    position: relative;
     &__title {
         order: 2;
         height: 100%;
@@ -48,6 +49,9 @@
             font-size: 6vw;
             border: 1px dashed $colorProjet;
             border-right: none;
+            p {
+                padding: 5vw 10vw;
+            }
         }
         &>section:first-child {
             border-bottom: none;
@@ -55,24 +59,6 @@
     }
 }
 
-.space {
-    color: $backgroundProjet;
-    background-image: url(./img/space.jpg);
-    background-position: center;
-    background-size: cover;
-    border: none !important;
-}
+.space {}
 
-.commerce {
-    color: $backgroundProjet;
-    background-image: url(./img/etoile.jpg);
-    background-position: center;
-    background-size: cover;
-    border: none !important;
-}
-
-.ok {
-    transition: all 0.5s;
-    background-color: $backgroundProjet;
-    color: $colorProjet;
-}
+.commerce {}

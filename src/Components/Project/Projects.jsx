@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./projects.scss";
 import WebsiteContent from "../../assets/js/websiteContent";
+import ParallaxEffect from "../Header/Components/ParallaxEffect/ParallaxEffect";
 
 export default function Projects({ onChangeVisibility }) {
   const titles = WebsiteContent().project.titles;
@@ -44,22 +45,32 @@ const  hanbleChangeBackGround = useCallback((e) => {
       element[index].classList.remove("enable");
     }
   }
+
+
 },[])
 
-const reset = useCallback((e) => {
-  
-const position = e.target.dataset.position;
+const cursorBig = useCallback((e) => {
+  const element = e.target;
+  const cursor = document.querySelector('.cursor');
+  cursor.style.height  = 60 + 'px';
+  cursor.style.width  = 60 + 'px';
 
-if(position == 0) {
-  e.target.parentElement.children[1].classList.remove('commerce')
-}else if(position == 1){
-  e.target.parentElement.children[0].classList.remove('space')
-}
+
+})
+
+
+const cursorReset = useCallback((e) => {
+  const element = e.target;
+  const cursor = document.querySelector('.cursor');
+  cursor.style.height  = 25 + 'px';
+  cursor.style.width  = 25 + 'px';
+
 
 })
  
   return (
     <div className="projects" id="project">
+      <ParallaxEffect/>
       <div className="projects__title">
         <h1>
           <span>p</span>
@@ -77,12 +88,11 @@ if(position == 0) {
           return (
             <section
               onMouseEnter={hanbleChangeBackGround}
-              onMouseLeave={reset}
               onClick={handleProject}
               data-position={index}
               key={index}
             >
-              <p data-index={index}>
+              <p data-index={index} onMouseEnter={cursorBig} onMouseLeave={cursorReset}>
                 <span>0.{1 + index}</span> {item}
               </p>
             </section>
