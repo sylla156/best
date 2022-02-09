@@ -152,11 +152,12 @@
         align-items: center;
         flex-direction: column;
         height: 100vh;
-        cursor: pointer;
+        cursor: none;
+
         &--content {
             display: grid;
             grid-template: 1fr 1fr 1fr / 1fr 1fr;
-            height: 50%;
+            height: 40vh;
             align-items: flex-start;
             span {
                 font-size: 8vw;
@@ -173,7 +174,7 @@
             }
         }
         &--next {
-            height: 50%;
+            height: 60vh;
             width: 100vw;
             background-color: $spaceColor;
             display: flex;
@@ -186,7 +187,8 @@
                 h1 {
                     font-size: 7em;
                     font-style: italic;
-                    margin-top: 5vh;
+                    margin: 0;
+                    margin-top: 2vh;
                 }
                 h3 {
                     font-size: 2em;
@@ -195,6 +197,7 @@
                 h4 {
                     text-align: end;
                     font-size: 1.5em;
+                    margin: 0;
                     a {
                         text-decoration: none;
                     }

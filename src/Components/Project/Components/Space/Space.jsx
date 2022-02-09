@@ -22,8 +22,20 @@ export default function Space({ onChangeVisibility }) {
   }, []);
 
   const nextProject = useCallback(() => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.remove("cursorAfter");
     onChangeVisibility(1);
   }, []);
+
+  const cursorBig = useCallback((e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.add("cursorAfter");
+  });
+
+  const cursorReset = useCallback((e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.remove("cursorAfter");
+  });
 
   return (
     <div className="spaces" ref={container}>
@@ -41,9 +53,13 @@ export default function Space({ onChangeVisibility }) {
       <div className="spaces__header">
         <div className="spaces__header--contentOne">
           <p>
-            <b>front end</b> <i><b>reactjs</b>.</i>Why reactjs because thanks to its
-            component principle I modeled my code to my ideology, i.e. each
-            display on the screen is independent of the code
+            <b>front end</b>{" "}
+            <i>
+              <b>reactjs</b>.
+            </i>
+            Why reactjs because thanks to its component principle I modeled my
+            code to my ideology, i.e. each display on the screen is independent
+            of the code
           </p>
         </div>
 
@@ -55,9 +71,13 @@ export default function Space({ onChangeVisibility }) {
         </div>
         <div className="spaces__header--contentTwo">
           <p>
-             <b>style</b> I didn't use style component or material-ui it's weird I know
-            I preferred to use <i><b>sass</b></i> and why because with my experience my
-            sassDocs is very complete. Contact me for more details
+            <b>style</b> I didn't use style component or material-ui it's weird
+            I know I preferred to use{" "}
+            <i>
+              <b>sass</b>
+            </i>{" "}
+            and why because with my experience my sassDocs is very complete.
+            Contact me for more details
           </p>
         </div>
       </div>
@@ -83,17 +103,24 @@ export default function Space({ onChangeVisibility }) {
           <img src={mob2} alt="the seconde mobile layout website" />{" "}
         </div>
       </div>
-      <div className="spaces__footer">
+      <div
+        className="spaces__footer"
+      >
         <div className="spaces__footer--content">
           <span>this</span>
           <span>SITE THE</span>
           <span>REDISIGN OF</span>
           <span>NASA</span>
         </div>
-        <div className="spaces__footer--next" onClick={nextProject}>
+        <div className="spaces__footer--next" onClick={nextProject}  onMouseEnter={cursorBig}
+        onMouseLeave={cursorReset}>
           <div>
             <h3>next project</h3>
-            <h4><a href="https://project2-ruby.vercel.app/" target='_blank'>view the website</a></h4>
+            <h4>
+              <a href="https://project2-ruby.vercel.app/" target="_blank">
+                view the website
+              </a>
+            </h4>
             <h1>commerce</h1>
           </div>
         </div>

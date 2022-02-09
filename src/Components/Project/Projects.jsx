@@ -24,8 +24,9 @@ export default function Projects({ onChangeVisibility }) {
   }, []);
 
   const handleProject = function (e) {
+    const cursor = document.querySelector('.cursor');
+    cursor.classList.remove('cursorAfter');
     const position = e.target.dataset.index;
-    console.log(position);
     onChangeVisibility(position);
   };
 
@@ -50,7 +51,6 @@ const  hanbleChangeBackGround = useCallback((e) => {
 },[])
 
 const cursorBig = useCallback((e) => {
-  const element = e.target;
   const cursor = document.querySelector('.cursor');
   cursor.classList.add('cursorAfter');
 
@@ -59,12 +59,8 @@ const cursorBig = useCallback((e) => {
 
 
 const cursorReset = useCallback((e) => {
-  const element = e.target;
   const cursor = document.querySelector('.cursor');
   cursor.classList.remove('cursorAfter');
-
-
-
 })
  
   return (

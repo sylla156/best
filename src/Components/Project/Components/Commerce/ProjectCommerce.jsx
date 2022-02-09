@@ -1,39 +1,47 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./projectCommerce.scss";
 import gsap from "gsap";
-import ScrollTrigger from 'gsap/scrollTrigger';
-import desktop from './img/Desktop.png';
-import form from './img/form.png';
-import contact from './img/contact.png';
-import LoaderProject from '../LoaderProject/LoaderProject';
+import ScrollTrigger from "gsap/scrollTrigger";
+import desktop from "./img/Desktop.png";
+import form from "./img/form.png";
+import contact from "./img/contact.png";
+import LoaderProject from "../LoaderProject/LoaderProject";
 
-
-
-export default function ProjectCommerce({onChangeVisibility}) {
+export default function ProjectCommerce({ onChangeVisibility }) {
   const container = useRef();
   const element = useRef();
 
-useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
-  const page = container.current.parentElement;
-  page.scroll(0,0);
-})
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const page = container.current.parentElement;
+    page.scroll(0, 0);
+  });
 
+  const out = useCallback(() => {
+    container.current.parentElement.scrollTop = innerHeight;
+    onChangeVisibility(null);
+  }, []);
 
- const out = useCallback( () => {
-  container.current.parentElement.scrollTop = innerHeight;
-  onChangeVisibility(null);
-},[])
+  const nextProject = useCallback(() => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.remove("cursorAfter");
+    onChangeVisibility(0);
+  }, []);
 
-const nextProject = useCallback(() => {
-   onChangeVisibility(0);
-},[])
+  const cursorBig = useCallback((e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.add("cursorAfter");
+  });
 
+  const cursorReset = useCallback((e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.remove("cursorAfter");
+  });
 
   return (
     <div className="projectCommerce" ref={container}>
       <Exit exits={out} />
-      <LoaderProject/>
+      <LoaderProject />
       <div className="projectCommerce__header">
         <div className="projectCommerce__header--title">
           <h1 className="main">ecommerce</h1>
@@ -62,10 +70,15 @@ const nextProject = useCallback(() => {
           </div>
           <div className="sectionSecond">
             <div>
-            Welcome to Commerce.js, a powerful eCommerce SDK for building custom cart and checkout experiences. Commerce.js is trusted by developers around the world to deliver API driven eCommerce into web, mobile, augmented, and virtual shopping experiences.
+              Welcome to Commerce.js, a powerful eCommerce SDK for building
+              custom cart and checkout experiences. Commerce.js is trusted by
+              developers around the world to deliver API driven eCommerce into
+              web, mobile, augmented, and virtual shopping experiences.
             </div>
             <div>
-            The philosophy and products of 'COMMERJS' inspired me to create this site. Looking for an organic atmosphere with a pleasant use, I wanted to create a site that guides the user at a glance
+              The philosophy and products of 'COMMERJS' inspired me to create
+              this site. Looking for an organic atmosphere with a pleasant use,
+              I wanted to create a site that guides the user at a glance
             </div>
           </div>
         </div>
@@ -93,9 +106,11 @@ const nextProject = useCallback(() => {
           <h1>introduction</h1>
           <p>
             <span>
-            A striking digital invitation to experience powerful online storytelling.
+              A striking digital invitation to experience powerful online
+              storytelling.
             </span>
-            A website that feels like an online art magazine that pulls you in and surprises you with every new scroll.
+            A website that feels like an online art magazine that pulls you in
+            and surprises you with every new scroll.
           </p>
         </div>
       </div>
@@ -107,20 +122,24 @@ const nextProject = useCallback(() => {
           <img src={form} alt="le second image de mes projet" />
         </div>
         <div className="projectCommerce__image--three">
-          <img src={contact} alt="le troisieme image de mes projet" /></div>
-      </div>
-      <div className="projectCommerce__next" onClick={nextProject}>
-        <div>
-        <h3>next Projet</h3>
-        <h1>spaces</h1>
-      </div>
+          <img src={contact} alt="le troisieme image de mes projet" />
         </div>
+      </div>
+      <div
+        className="projectCommerce__next"
+        onClick={nextProject}
+        onMouseEnter={cursorBig}
+        onMouseLeave={cursorReset}
+      >
+        <div>
+          <h3>next Projet</h3>
+          <h1>spaces</h1>
+        </div>
+      </div>
     </div>
   );
 }
 
 const Exit = function ({ exits }) {
-  return (
-      <button className="button-close"  onClick={exits}></button>
-  );
+  return <button className="button-close" onClick={exits}></button>;
 };
