@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./projectCommerce.scss";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/scrollTrigger";
 import desktop from "./img/Desktop.png";
 import form from "./img/form.png";
 import contact from "./img/contact.png";
@@ -12,7 +10,6 @@ export default function ProjectCommerce({ onChangeVisibility }) {
   const element = useRef();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const page = container.current.parentElement;
     page.scroll(0, 0);
   });
