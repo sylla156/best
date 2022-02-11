@@ -6,8 +6,8 @@ export default function Contact({}) {
 const request = useRef();
 
 const send = useCallback((e) => {
-        const x =  (window.innerWidth - e.pageX * parseInt(9)) / 100;
-        const y =(window.innerHeight - e.pageY * parseInt(9)) / 100;
+        const x =  ( e.pageX * parseInt(9)) / 100;
+        const y =(e.pageY * parseInt(9)) / 100;
         request.current.style.transform = `translate(${x}px,${y}px)`
 }) 
 

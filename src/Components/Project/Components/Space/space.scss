@@ -157,7 +157,7 @@
         &--content {
             display: grid;
             grid-template: 1fr 1fr 1fr / 1fr 1fr;
-            height: 40vh;
+            height: 60vh;
             align-items: flex-start;
             span {
                 font-size: 8vw;
@@ -174,7 +174,7 @@
             }
         }
         &--next {
-            height: 60vh;
+            height: 40vh;
             width: 100vw;
             background-color: $spaceColor;
             display: flex;
