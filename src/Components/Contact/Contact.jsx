@@ -28,18 +28,16 @@ const send = useCallback((e) => {
           <div className="contactProject__content--reseaux">
               <h3>social</h3>
               <div>
-                  <p>Twitter</p>
-                  <p>LinkedIn</p>
-                  <p>Fiverr</p>
-                  <p>instagram</p>
+                  <p><a href="https://www.linkedin.com/in/brahimcode" target='_blank'>Linkedin</a></p>
+                  <p><a href="https://www.github.com/sylla156" target='_blank'>Github</a></p>
+                  <p><a href="https://wa.me/2250506430832" target='_blank'>whatsapp</a></p>
               </div>
           </div>
           <div className="contactProject__content--contact">
               <h3>contact</h3>
               <ol>
-                  <li>ibrahimsyllac196@gmail.com</li>
-                  <li>+225 0506430832</li>
-                  <li><a href="https://wa.me/2250506430832" target='_blank'>whatsapp</a></li>
+                  <li><b>Email: </b> ibrahimsyllac196@gmail.com</li>
+                  <li><b>Phone: </b> +225 0506430832</li>
               </ol>
           </div>
          <div className="contactProject__content--send" ref={request}>
