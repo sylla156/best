@@ -17,7 +17,7 @@
             margin: 0px;
             padding: 0px;
             span {
-                font-size: 13vw;
+                font-size: 4em;
                 text-transform: uppercase;
                 font-style: italic;
             }
@@ -70,6 +70,7 @@
                 display: block;
                 span {
                     display: block;
+                    font-size: 2em;
                 }
                 span:last-child {
                     text-indent: 20vw;
@@ -98,7 +99,7 @@
                 justify-content: center;
                 p {
                     width: 100%;
-                    font-size: 4vw;
+                    font-size: 1.5em;
                     text-indent: 30px;
                     &::first-letter {
                         font-weight: bold;
@@ -121,6 +122,7 @@
                 display: block;
                 span {
                     display: block;
+                    font-size: 2em;
                 }
                 span:last-child {
                     text-indent: 20vw;

@@ -8,7 +8,7 @@
         height: 20vh;
         h1 {
             font-style: italic;
-            font-size: 10vw;
+            font-size: 3em;
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 40px;
@@ -19,6 +19,7 @@
             text-align: justify;
             text-transform: uppercase;
             margin-left: 10vw;
+            font-size: 1em;
         }
     }
     &__content {
@@ -75,7 +76,7 @@
 
 @include mobile() {
     .skillsProject {
-        min-height: 135vh;
+        min-height: 100vh;
         &__title {
             h1 {
                 letter-spacing: 30px;
@@ -91,6 +92,7 @@
             padding-top: 0vh;
             &--child {
                 width: 45%;
+                height:15vh;
                 p {
                     font-size: 1em;
                 }
@@ -101,8 +103,9 @@
 
 @include tab() {
     .skillsProject {
-        min-height: 135vh;
+        min-height: 100vh;
         &__title {
+            height: 18vh;
             h1 {
                 letter-spacing: 30px;
             }
@@ -113,10 +116,11 @@
         }
         &__content {
             align-content: space-between;
-            gap: 3vh 0;
+            gap: 2vh 0;
             padding-top: 0vh;
             &--child {
                 width: 45%;
+                height: 17vh;
                 p {
                     font-size: 1.5em;
                 }
