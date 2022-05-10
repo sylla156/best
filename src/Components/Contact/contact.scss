@@ -42,7 +42,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+<<<<<<< HEAD
         padding: 0 3vw;
+=======
+        padding: 0 5vw;
+>>>>>>> ec45d67f89d2836cfaf916bc55c937ec57f44bed
 
         &--help {
             width: 10%;
@@ -124,7 +128,11 @@
                
 
                 &>* {
+<<<<<<< HEAD
                     font-size: 0.7em;
+=======
+                    font-size: 1.1em;
+>>>>>>> ec45d67f89d2836cfaf916bc55c937ec57f44bed
                     transform: all 0.5s;
                     margin: 10px 0;
                     transition: all 0.2s;
